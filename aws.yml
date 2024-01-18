@@ -11,7 +11,7 @@
       register: key_pair
     - name: Provision EC2 instances
       ec2:
-        key_name: "{{ key_pair.key_name }}"
+        key_name: "{{ key_pair.key_pair.name }}"
         instance_type: "t3.micro"
         image: "ami-0014ce3e52359afbd"
         wait: true
@@ -20,7 +20,6 @@
         group: "MySecurityGroup"
         assign_public_ip: yes
       register: ec2
-
     - name: Add build and deploy instances to host group
       add_host:
         hostname: "{{ item.public_ip }}"
@@ -81,4 +80,3 @@
       copy:
         src: /home/ubuntu/boxfuse1/target/hello-1.0.war
         dest: /usr/local/tomcat/webapps
-
