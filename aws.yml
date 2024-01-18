@@ -1,10 +1,7 @@
 
----
 - name: Deploy Java project to AWS EC2
-  hosts: localhost
+  hosts: all
   gather_facts: false
-  vars:
-    ansible_ssh_private_key_file: /root/.ssh/my-key.pem
   tasks:
     - name: Provision EC2 instances
       ec2:
@@ -77,5 +74,5 @@
     - name: Copy WAR file to Tomcat webapps
       copy:
         src: /home/ubuntu/boxfuse1/target/hello-1.0.war
-        dest: /usr/local/tomcat/webapps    
+        dest: /usr/local/tomcat/webapps
 
