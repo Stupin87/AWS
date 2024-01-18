@@ -1,4 +1,4 @@
-
+---
 - name: Deploy Java project to AWS EC2
   hosts: localhost
   connection: local
