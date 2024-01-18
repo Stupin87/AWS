@@ -1,7 +1,7 @@
 
 ---
 - name: Deploy Java project to AWS EC2
-  hosts: 158.160.115.35
+  hosts: localhost
   gather_facts: false
   tasks:
     - name: Provision EC2 instances
