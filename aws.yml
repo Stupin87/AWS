@@ -6,17 +6,17 @@
   tasks:
     - name: Create Key Pair
       ec2_key:
-        name: my-key2
-        region: eu-north-1
+        name: my-key1
+        region: us-east-1
       register: key_pair
     - name: Provision EC2 instances
       ec2_instance:
         key_name: "{{ key_pair.key.name }}"
-        instance_type: "t3.micro"
+        instance_type: "t2.micro"
         image: "ami-0014ce3e52359afbd"
         wait: true
         count: 2
-        region: "eu-north-1"
+        region: "us-east-1"
         group: "MySecurityGroup"
         assign_public_ip: yes
       register: ec2
