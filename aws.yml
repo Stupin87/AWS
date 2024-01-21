@@ -19,7 +19,7 @@
         region: "us-east-1"
         group: "MySecurityGroup"
         assign_public_ip: yes
-        vpc_subnet_id: "0e2e4ea94eaa924d6"
+        vpc_subnet_id: "vpc-0e2e4ea94eaa924d6"
       register: ec2
     - name: Add build and deploy instances to host group
       add_host:
