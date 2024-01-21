@@ -10,10 +10,10 @@
         region: us-east-1
       register: key_pair
     - name: Provision EC2 instances
-      ec2_instance:
+      ec2:
         key_name: "{{ key_pair.key.name }}"
         instance_type: "t2.micro"
-        image: "ami-0014ce3e52359afbd"
+        image: "ami-06aa3f7caf3a30282"
         wait: true
         count: 2
         region: "us-east-1"
